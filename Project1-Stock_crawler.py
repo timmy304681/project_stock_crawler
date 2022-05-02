@@ -4,6 +4,8 @@ from bs4 import BeautifulSoup
 import requests
 import lxml
 import pymysql
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
 class Stock:
     #建構式
@@ -45,7 +47,7 @@ class Stock:
             "host": "localhost",
             "port": 3306,
             "user": "root",
-            "password": "******",
+            "password": password,
             "db": "stock_db",
             "charset": "utf8"}
         try:
@@ -80,10 +82,31 @@ class Stock:
         except Exception as ex:
             print("Exception:", ex)
 
+    #將資料存入google sheet
+    def gsheet(self, stocks):
+        scopes = ["https://spreadsheets.google.com/feeds"]
+ 
+        credentials = ServiceAccountCredentials.from_json_keyfile_name(
+                    "credits_googlesheet.json", scopes)   #credits_googlesheet.json要先建起google sheet api，並取得憑證
+        #使用憑證取得google sheet api授權
+        client = gspread.authorize(credentials)
 
+        sheet = client.open_by_key(googlesheetkey).sheet1 #sheet1為第一個工作表
+
+        for stock in stocks:
+            sheet.append_row(stock)
 
 
 stock = Stock("2330","2303","2603","2609")  #建立Stock物件
 
+
+
+##Set password & keys
+password="YOUR PASSWORD"
+googlesheetkey="YOUR GOOGLE SHEET KEY"
+
+
+##Start
 print(stock.crawler())
-stock.save2sql(stock.crawler())
+stock.save2sql(stock.crawler())  #將資料存入mysql
+stock.gsheet(stock.crawler())     #將資料存入google sheet
