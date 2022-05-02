@@ -7,3 +7,12 @@
 
 crawler()方法(Method)為爬取關注的股票當日行情資料，利用python爬蟲module如：requests和BeautifulSoup，解析奇摩股市html，並提取所需股票資訊  
 save2sql()方法(Method)提供存入MySQL資料庫的功能，利用pymysql將crawler()爬取的數據存入mysql
+
+## 存入mysql後結果呈現
+
+
+<img width="1201" alt="pic" src="https://user-images.githubusercontent.com/51151276/166199986-e844a35d-94ec-4d28-9538-eeb98e1b5f84.png">
+
+
+## Reference
+https://www.learncodewithmike.com/2020/08/python-scraper-integrate-with-mysql.html
