@@ -1,6 +1,8 @@
-# project_stock_crawler
-## 專案介紹
-本專案以Yahoo奇摩股市為例，開發Python網頁爬蟲取得關注的股票當日行情，包含：  
+# 專案介紹
+1. Project1-Stock_crawler.py : 本專案以Yahoo奇摩股市為例，開發Python網頁爬蟲取得關注的股票當日行情 
+2. twstock.ipynb : 將股票資訊以可視化圖象呈現
+
+## Project1-Stock_crawler.py
 * ***crawler()***  
 爬取關注的股票當日行情資料，利用python爬蟲module如：requests和BeautifulSoup，解析奇摩股市html，並提取所需股票資訊  
 
@@ -13,9 +15,7 @@
 
 
 
-
-
-## 存入mysql後結果呈現
+### 存入mysql後結果呈現
 
 
 <img width="1201" alt="pic" src="https://user-images.githubusercontent.com/51151276/166199986-e844a35d-94ec-4d28-9538-eeb98e1b5f84.png">
@@ -23,7 +23,7 @@
 
 
 
-## 本專案使用的python module
+### 本專案使用的python module
 
 `BeautifulSoup`   
 `requests`    
@@ -31,6 +31,8 @@
 `pymysql`   
 `gspread`   
 `ServiceAccountCredentials`   
+
+## twstock.ipynb
 
 
 ## Reference
