@@ -10,10 +10,10 @@
 提供存入MySQL資料庫的功能，利用pymysql將crawler()爬取的數據存入mysql  
 
 * ***gsheet()***  
-啟用google sheet api，藉著ServiceAccountCredentials獲取授權，直接將資料寫入雲端google sheet
+啟用google sheet api，藉著ServiceAccountCredentials獲取授權，直接將資料寫入雲端google sheet  
 
-
-
+* ***export2excel()***  
+使用openpyxl模組，將爬取資料寫入excel檔中，並針對資料屬性改變顏色樣式等  
 
 ### 存入mysql後結果呈現
 
@@ -31,6 +31,7 @@
 `pymysql`   
 `gspread`   
 `ServiceAccountCredentials`   
+`openpyxl`  
 
 ## twstock.ipynb
 
