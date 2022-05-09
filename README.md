@@ -1,6 +1,7 @@
 # 專案介紹
 1. Project1-Stock_crawler.py : 本專案以Yahoo奇摩股市為例，開發Python網頁爬蟲取得關注的股票當日行情 
-2. twstock.ipynb : 將股票資訊以可視化圖象呈現
+2. matplotlib_seaborn.ipynb: python套件，讓股票資訊以各種統計圖表呈現 
+3. twstock.ipynb : 將股票資訊以可視化圖象呈現
 
 ## Project1-Stock_crawler.py
 * ***crawler()***  
